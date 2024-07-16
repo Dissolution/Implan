@@ -15,14 +15,12 @@ namespace ScrubJay.Results;
 /// The <see cref="Type"/> of Value in <c>Result.Ok(Value)</c>
 /// </typeparam>
 public readonly struct Result<TValue> :
-#if NET7_0_OR_GREATER
     IEqualityOperators<Result<TValue>, Result<TValue>, bool>,
     IEqualityOperators<Result<TValue>, Result, bool>,
     IEqualityOperators<Result<TValue>, bool, bool>,
     IBitwiseOperators<Result<TValue>, Result<TValue>, bool>,
     IBitwiseOperators<Result<TValue>, Result, bool>,
     IBitwiseOperators<Result<TValue>, bool, bool>,
-#endif
     IEquatable<Result<TValue>>,
     IEquatable<Result>,
     IEnumerable<TValue>,

@@ -16,12 +16,10 @@ namespace ScrubJay.Results;
 /// <see cref="Result{T}"/> is for the concept of an Ok with Value or an Error with Exception
 /// </remarks>
 public readonly struct Result :
-#if NET7_0_OR_GREATER
     IEqualityOperators<Result, Result, bool>,
     IEqualityOperators<Result, bool, bool>,
     IBitwiseOperators<Result, Result, bool>,
     IBitwiseOperators<Result, bool, bool>,
-#endif
     IEquatable<Result>,
     IEquatable<bool>
 {
